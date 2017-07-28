@@ -1,5 +1,5 @@
 console.log('script.js sourced!');
-
+console.log(Math.e);
 
 $('Document').ready(function () {
     $('body').append('<h2>Not just down, all the way down!</H2>');
@@ -9,14 +9,20 @@ $('Document').ready(function () {
     $('.food').css('color', 'pink');
     $('#chief').css('color', 'green');
     // $('ul:first li:last-child').css('color', 'black');
-    $('ul').first().children().last().css( "color", "black");
+    $('ul').first().children().last().css("color", "black");
 
     var clicks = 0
-    
-    $('#kevinNewFavorite').on('click', function(){
-        $('#kevin').append('<li>light sabers</li>')
-        // clicks++;
-        // console.log('button was clicked', clicks, 'times');
+
+    $('#kevinNewFavorite').on('click', function () {
+        var kevinsFavorite = $('#kevinsNewFavoriteInput').val();
+        $('#kevin').append('<li>'+kevinsFavorite+'</li>')
+       
+    });
+
+    $('#brendtsNewFavorite').on('click', function() {
+        var brendtsFavorite = $('#brendtsNewFavoriteInput').val();
+        $('#brendt').append('<li>'+brendtsFavorite+'</li>')
+
     });
 
 
