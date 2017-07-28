@@ -1,8 +1,7 @@
 console.log('script.js sourced!');
-console.log(Math.e);
 
 $('Document').ready(function () {
-    $('body').append('<h2>Not just down, all the way down!</H2>');
+    $('body').append('<h2>Cookies all the way down!</H2>');
     $('body').prepend('<h2>All the way to the top!</h2>');
     $('li').css('color', 'blue');
     $('#kevin li').css('color', 'maroon');
@@ -15,17 +14,20 @@ $('Document').ready(function () {
 
     $('#kevinNewFavorite').on('click', function () {
         var kevinsFavorite = $('#kevinsNewFavoriteInput').val();
-        $('#kevin').append('<li>'+kevinsFavorite+'</li>')
-       
+        // $('#kevin').append('<li>'+kevinsFavorite+'</li>')
+        $('#kevin').append('<li>' + kevinsFavorite + '<button class="deleteme">Delete me</button></li>')
     });
 
-    $('#brendtsNewFavorite').on('click', function() {
+
+    $('#brendtsNewFavorite').on('click', function () {
         var brendtsFavorite = $('#brendtsNewFavoriteInput').val();
-        $('#brendt').append('<li>'+brendtsFavorite+'</li>')
+        $('#brendt').append('<li>' + brendtsFavorite + '<button class="deleteme">Delete me</button></li>')
 
     });
 
-
+    $('ul').on('click', '.deleteme', function () {
+        $(this).parent().remove()
+    })
 
 
 
